@@ -15,12 +15,6 @@
         <div class="panel-body">
             <h3 class="panel-title"><?php echo $post['body']; ?>
         </div>
-        <div class="panel-heading">
-            <h3 class="panel-title"> <?php echo $post['title']; ?> </h3>
-        </div>
-        <div class="panel-body">
-            <h3 class="panel-title"><?php echo $post['body']; ?>
-        </div>
     </div>
 <?php } ?>
 </body>
