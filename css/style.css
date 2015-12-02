@@ -1,0 +1,12 @@
+.blog-nav-item {
+    position: relative;
+    display: inline-block;
+    padding: 10px;
+    font-weight: 500;
+    color: #ffffff;
+}
+.blog-nav-item:hover,
+.blog-nav-item:focus {
+    color: #428BCA;
+    text-decoration: none;
+}
