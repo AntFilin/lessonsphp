@@ -5,6 +5,8 @@
     <title>Публикации</title>
     <link rel="stylesheet" href="../css/bootstrap.min.css" />
     <link rel="stylesheet" href="../css/style.css" />
+    <script src="https://code.jquery.com/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/js/bootstrap.min.js"></script>
 </head>
 <body>
     <nav class="navbar navbar-inverse">
@@ -40,9 +42,7 @@
         </div>
     </div>
 </div>
-<script src="../js/bootstrap.min.js"></script>
-<script src="../js/bootstrap.js"></script>
-<script src="../js/scripts.js"></script>
+
 
 </body>
 </html>
