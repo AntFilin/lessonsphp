@@ -35,8 +35,8 @@
                     Сортировать по дате <span class="caret"></span>
                 </button>
                 <ul class="dropdown-menu">
-                    <li><a href="#">Самые новые</a></li>
-                    <li><a href="#">Самые старые</a></li>
+                    <li><a href="http://localhost:8000/post/post.php">Самые новые</a></li>
+                    <li><a href="http://localhost:8000/post/post.php?date_sort=old">Самые старые</a></li>
                 </ul>
             </div>
         </div>

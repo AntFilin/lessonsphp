@@ -9,5 +9,10 @@ $posts = [
 ksort($posts);
 array_values($posts);
 
+if($_GET) {
+    krsort($posts);
+    array_values($posts);
+};
+
 include 'post.html.php';
 
