@@ -35,9 +35,8 @@
                     Сортировать по дате <span class="caret"></span>
                 </button>
                 <ul class="dropdown-menu">
-
-                    <li><a href="http://localhost:8000/post/post.php">Самые новые</a></li>
-                    <li><a href="<?php echo $link ?>">Самые старые</a></li>
+                    <li><a href="<?php echo $url_new ?>">Самые новые</a></li>
+                    <li><a href="<?php echo $url_old ?>">Самые старые</a></li>
                 </ul>
             </div>
         </div>
