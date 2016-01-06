@@ -1,5 +1,5 @@
 <?php
-
+include 'db_connection.php';
 // Data
 $posts = [
     ['title' => 'title of post1','body' => 'body of post1','date' => '2015-12-03 13:00:00'],
