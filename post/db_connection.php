@@ -19,11 +19,11 @@ if (!$result) {
     die("Запрос не удался.");
 }
 while($row = mysqli_fetch_assoc($result)){
-    echo $row ["post_id"]. "<br />";
-    echo $row ["dt_post"]. "<br />";
-
-    echo "<hr />";
+    $posts[] = $row;
+    print_r($posts) ;
 }
+
+
 mysqli_free_result($result);
 mysqli_close($connection);
 
