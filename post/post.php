@@ -1,13 +1,5 @@
 <?php
 include 'db_connection.php';
-// Data
-
-$posts = [];
-
-/*    ['title' => 'title of post1','body' => 'body of post1','date' => '2015-12-03 13:00:00'],
-    ['title' => 'title of post2','body' => 'body of post2','date' => '2015-12-02 13:00:00'],
-    ['title' => 'title of post3','body' => 'body of post3','date' => '2015-12-01 13:00:00']
-]; */
 
 // Params
 $params = [
@@ -18,7 +10,7 @@ $params = [
 $posts_date = [];
 foreach($posts as $post)
 {
-    $posts_date[$post['post']] = $post;
+    $posts_date[$post['dt_post']] = $post;
 }
 
 if($params['date_sort'] === 'old')

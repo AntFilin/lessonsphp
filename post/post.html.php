@@ -21,10 +21,10 @@
 <?php foreach($posts as $post) { ?>
     <div class="panel panel-default">
         <div class="panel-heading">
-            <h3 class="panel-title"> <?php echo htmlspecialchars($post['title']); ?> </h3>
+            <h3 class="panel-title"> <?php echo htmlspecialchars($post['post_id']); ?> </h3>
         </div>
         <div class="panel-body">
-            <h3 class="panel-title"><?php echo htmlspecialchars($post['body']); ?>
+            <h3 class="panel-title"><?php echo htmlspecialchars($post['dt_post']); ?>
         </div>
     </div>
 <?php } ?>
