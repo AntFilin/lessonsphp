@@ -1,6 +1,35 @@
 <?php
 include 'db_connection.php';
 
+class Db {
+    const dblocation = 'localhost';
+    const dbuser = 'root';
+    const dbpasswd = '';
+    const dbname = 'blog';
+
+    public function __construct()
+    {
+    }
+
+    protected function query($sql) {
+
+         returns while($row = mysqli_fetch_assoc($result)) {
+            $posts[] = $row;
+                    }
+    }
+}
+class DbPost extends Db {
+    public static function getPosts($params) {
+
+    }
+}
+
+/* Zapros do sql na sortirovky po date
+"SELECT * FROM posts ORDER BY dt_post"
+"SELECT * FROM posts ORDER BY dt_post DESC "
+*/
+
+
 // Params
 $params = [
     'date_sort' => !empty($_GET['date_sort']) ? $_GET['date_sort'] : 'new'
