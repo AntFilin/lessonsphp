@@ -1,25 +1,29 @@
 <?php
-include 'db_connection.php';
+include 'db_connection.php'; //Уберу потом
 
 class Db {
     const dblocation = 'localhost';
     const dbuser = 'root';
     const dbpasswd = '';
     const dbname = 'blog';
-
-    public function __construct()
-    {
+    private $connect;
+    public $result;
+    public function __construct() {
+        $this->connect = mysqli_connect($this::dblocation, $this::dbuser, $this::dbpasswd, $this::dbname);
     }
 
+    /**
+     * @param $sql
+     */
     protected function query($sql) {
-
-         returns while($row = mysqli_fetch_assoc($result)) {
-            $posts[] = $row;
-                    }
+        $this->/*сюда хотел переменную $result, но ругается IDE, что-то не правильно делаю */ = mysqli_query($sql, $this->connect);
     }
-}
+
+    // После отправки sql-запроса, результат нужно собрать в массив, это нужно делать внутри метода query($sql) или это должен быть отдельный метод?
+
 class DbPost extends Db {
-    public static function getPosts($params) {
+    public static function getPosts($fields='*',$tables, $order_by, $order ) {
+
 
     }
 }
