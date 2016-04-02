@@ -1,32 +1,56 @@
 <?php
 include 'db_connection.php'; //Уберу потом
 
-class Db {
-    const dblocation = 'localhost';
-    const dbuser = 'root';
-    const dbpasswd = '';
-    const dbname = 'blog';
-    private $connect;
-    public $result;
-    public function __construct() {
-        $this->connect = mysqli_connect($this::dblocation, $this::dbuser, $this::dbpasswd, $this::dbname);
+class Db
+{
+    const DBLOCATION = 'localhost';
+    const DBUSER = 'root';
+    const DBPASSWD = '';
+    const DBNAME = 'blog';
+    protected $connect;
+    protected $result;
+    protected $array;
+
+    public function __construct()
+    {
+        $this->connect = mysqli_connect($this::DBLOCATION, $this::DBUSER, $this::DBPASSWD, $this::DBNAME);
     }
 
     /**
      * @param $sql
      */
-    protected function query($sql) {
-        $this->/*сюда хотел переменную $result, но ругается IDE, что-то не правильно делаю */ = mysqli_query($sql, $this->connect);
-    }
+    protected function query($sql, $result)
+    {
+        $this->result = mysqli_query($sql, $this->connect);
+        $this->array = mysqli_fetch_assoc($result);
+        /* Или здесь я должен собирать в массив через подобную конструкцию?
 
-    // После отправки sql-запроса, результат нужно собрать в массив, это нужно делать внутри метода query($sql) или это должен быть отдельный метод?
-
-class DbPost extends Db {
-    public static function getPosts($fields='*',$tables, $order_by, $order ) {
-
+         while($row = mysqli_fetch_assoc($result)) {
+            $posts[] = $row;}
+}
+        */
 
     }
 }
+
+
+class DbPost extends Db{
+    /**
+     * @param string $fields - выбор полей, поставил выбирать все.
+     * @param $tables -таблицы
+     * @param $order_by - упорядочить по
+     * @param $order - принимает значение DESC
+     */
+    public static function getPosts($fields = '*', $tables, $order_by, $order){
+
+    }
+}
+
+$db = new Db();
+$db->__construct();
+$db->query(); // Тут хотел вызвать функцию от параметра $sql, но по сути, я сюда и должен формировать сам sql-запрос к базе?
+// Тут последним должен идти статический метод getPost, вызывать пока нечего.
+
 
 /* Zapros do sql na sortirovky po date
 "SELECT * FROM posts ORDER BY dt_post"
